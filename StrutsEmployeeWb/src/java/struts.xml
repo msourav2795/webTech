@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+    <constant name="struts.custom.i18n.resources" value="ApplicationResources"/>
+    <package name="default" extends="struts-default">
+        <action name="employee" class="com.tc.dto.Employee" method="insertEmployee">
+            <result name="success">ShowAllEmployee.jsp</result>
+            <result name="failure">CreateEmployee.jsp</result>
+        </action>
+        <action name="GetEmployee" class="com.tc.dto.Employee" method="getEmployee">
+            <result name="success">UpdateEmployee.jsp</result>
+            <result name="failure">Failure.jsp</result>
+            <param name="employeeId"></param>
+        </action>
+        <action name="updateEmployee" class="com.tc.dto.Employee" method="updateEmployee">
+            <result name="success">ShowAllEmployee.jsp</result>
+            <result name="failure">Failure.jsp</result>
+            <result name="nosession">NoSession.jsp</result>            
+        </action>
+        <action name="ShowAllEmployee" class="com.tc.dto.Employee" method="showAllEmployee">
+            <result name="success">ShowAllEmployee.jsp</result>
+            <result name="failure">Failure.jsp</result>
+            <result name="nosession">NoSession.jsp</result>
+        </action>
+        <action name="SearchEmployee" class="com.tc.dto.Employee" method="searchEmployee">
+            <result name="success">ShowAllEmployee.jsp</result>
+            <result name="failure">Failure.jsp</result>
+            <param name="employeeName"></param>
+        </action> 
+        <action name="Login" class="com.tc.dto.Employee" method="validateEmployee">
+            <result name="success">HomePage.jsp</result>
+            <result name="failure">Failure.jsp</result>
+        </action>  
+        <action name="Logoff" class="com.tc.dto.Employee" method="logOff">
+            <result name="success">HomePage.jsp</result>
+            <result name="failure">Failure.jsp</result>
+        </action> 
+        <action name="Role" class="com.tc.dto.Employee" method="roleFunction">
+            <result name="success">Login.jsp</result>
+            <result name="failure">Failure.jsp</result>
+        </action>     
+    </package>
+</struts>    
